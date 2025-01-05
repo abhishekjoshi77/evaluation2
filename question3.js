@@ -9,7 +9,7 @@ const supermarketData = {
         tablet: { available: 15, price: 300 },
       },
       sales: [
-       { id: 1, items: ["laptop", "tablet"], total: 1100 },
+        { id: 1, items: ["laptop", "tablet"], total: 1100 },
         { id: 2, items: ["smartphone", "tablet"], total: 800 },
         { id: 3, items: ["laptop", "smartphone"], total: 1300 },
       ],
@@ -19,45 +19,37 @@ const supermarketData = {
         shirt: { available: 50, price: 25 },
         jeans: { available: 40, price: 40 },
         dress: { available: 30, price: 60 },
-     },
+      },
       sales: [
         { id: 1, items: ["shirt", "jeans"], total: 60 },
         { id: 2, items: ["dress", "shirt"], total: 85 },
-       { id: 3, items: ["jeans", "dress"], total: 100 },
+        { id: 3, items: ["jeans", "dress"], total: 100 },
       ],
-   },
- },
+    },
+  },
   sectionNames: ["electronicsSection", "clothingSection"],
 };
 
 function findProductDetails(data) {
-const {
-    products :{
-        electronicsSection : {
-            inventory : {laptop:{available:laptopavailable,
-                price:laptopPrice
-            }},
-        },
-        clothingSection: {
-            inventory : {shirt:{ available:shirtAvailable, price : shirtPrice
-                
-            },
-        },
+  const {
+    products: {
+      electronicsSection: {
+        inventory: { laptop: { available: laptopAvailable, price: laptopPrice } },
+      },
+      clothingSection: {
+        inventory: { shirt: { available: shirtAvailable, price: shirtPrice } },
+      },
     },
-} = data;
+  } = data;
 
-
-return {
-    
-  laptopAvailable,
-  shirtAvailable, 
-  laptopPrice,
-  shirtPrice,
-
-
-};
+  return {
+    laptopAvailable,
+    shirtAvailable,
+    laptopPrice,
+    shirtPrice,
+  };
 }
 
-const productDetails = findProductDetails
-(supermarketData);
+// Example usage
+const productDetails = findProductDetails(supermarketData);
 console.log(productDetails);
