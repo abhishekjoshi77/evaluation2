@@ -1,3 +1,18 @@
+function groupAndSortProducts(products)
+
+{
+    return products.reduce((acc,product) => {
+        const {category} = product;
+        if (!acc[category]) {
+            acc[category] =[];
+        }
+        
+    acc[category].push(product);
+    acc[category].sort((a,b) => b.rating - a.rating);
+    return acc;
+    },{});
+}
+
 const products = [
  { productName: "Laptop", category: "Electronics", quantity: 10, price: 1200, rating: 4.5 },
  { productName: "Smartphone", category: "Electronics", quantity: 15, price: 800, rating: 4.2 },
@@ -12,4 +27,5 @@ const products = [
  { productName: "Camera", category: "Photography", quantity: 12, price: 500, rating: 4.7 },
  { productName: "Lens", category: "Photography", quantity: 6, price: 250, rating: 4.5 }
 ];
-
+const groupedAndSortedProducts = groupAndSortProducts(products);
+console.log(groupedAndSortedProducts);
