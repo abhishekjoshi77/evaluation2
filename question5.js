@@ -1,7 +1,7 @@
 
-function groupedByDepartment(employees)
+function groupByDepartment(employees)
 {
-    return employees.reduce ((acc, employee) =>) {
+    return employees.reduce ((acc, employee) => {
         const {department } = employee;
         if (!acc[department]) {
             acc[department] = [];
