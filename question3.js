@@ -30,13 +30,34 @@ const supermarketData = {
   sectionNames: ["electronicsSection", "clothingSection"],
 };
 
+function findProductDetails(data) {
+const {
+    products :{
+        electronicsSection : {
+            inventory : {laptop:{available:laptopavailable,
+                price:laptopPrice
+            }},
+        },
+        clothingSection: {
+            inventory : {shirt:{ available:shirtAvailable, price : shirtPrice
+                
+            },
+        },
+    },
+} = data;
 
 
-{
-  laptopAvailable: // Number of laptops available,
-  shirtAvailable: // Number of shirts available,
-  laptopPrice: // Price of a laptop,
-  shirtPrice: // Price of a shirt,
+return {
+    
+  laptopAvailable,
+  shirtAvailable, 
+  laptopPrice,
+  shirtPrice,
 
 
+};
+}
 
+const productDetails = findProductDetails
+(supermarketData);
+console.log(productDetails);
