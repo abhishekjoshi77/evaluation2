@@ -1,3 +1,19 @@
+
+function groupedByDepartment(employees)
+{
+    return employees.reduce ((acc, employee) =>) {
+        const {department } = employee;
+        if (!acc[department]) {
+            acc[department] = [];
+        }
+        acc[department].push(employee);
+        
+        acc[department].sort((a,b) => a.age - b.age);
+        return acc ;
+    },{});
+}
+
+
 const employees = [
  { name: "Alice", age: 30, salary: 50000, department: "HR" },
  { name: "Bob", age: 35, salary: 60000, department: "Finance" },
