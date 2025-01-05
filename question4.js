@@ -1,3 +1,5 @@
+//4. File Segregation
+
 function segregateFiles(fileNames) {
   return fileNames.reduce((acc, fileName) => {
     const extension = fileName.split('.').pop(); 
