@@ -1,4 +1,36 @@
+//6.2 Analyzing Voter Participation
 
+function analyzeVoterData(voters) {
+    return voters.reduce(
+        (stats,voter) => {
+            const {age,voted} = voter ;
+            if (age >= 18 && age <= 25) {
+                stats.numYoungPeople++;
+                if(voted) stats.numYoungVotes++;
+            }else if (age >=26 && age <=35) {
+                stats.numMidsPeople++;
+                if(voted) stats.numMidVotesPeople++;
+            }else if (age >=36) {
+                stats.numOldPeople++;
+                if(voted)stats.numOldVotedPeople++;
+            }
+            
+            return stats;
+            },
+            
+            
+                {
+  numYoungVotes:0/* Number of young voters (aged 18-25) who voted */,
+  numYoungPeople:0 /* Number of young people (aged 18-25) */,
+  numMidVotesPeople:0 /* Number of middle-aged voters (aged 26-35) who voted */,
+  numMidsPeople: 0/* Number of middle-aged people (aged 26-35) */,
+  numOldVotesPeople: 0/* Number of older voters (aged 36 and above) who voted */,
+  numOldsPeople: 0/* Number of older people (aged 36 and above) */
+}
+
+            
+            );
+}
 
 
 
@@ -18,13 +50,3 @@ const voters = [
 ];
 
 console.log(analyzeVoterData(voters));
-
-
-{
-  numYoungVotes: /* Number of young voters (aged 18-25) who voted */,
-  numYoungPeople: /* Number of young people (aged 18-25) */,
-  numMidVotesPeople: /* Number of middle-aged voters (aged 26-35) who voted */,
-  numMidsPeople: /* Number of middle-aged people (aged 26-35) */,
-  numOldVotesPeople: /* Number of older voters (aged 36 and above) who voted */,
-  numOldsPeople: /* Number of older people (aged 36 and above) */
-}
